@@ -1,0 +1,28 @@
+[Event "Some event"]
+[Site "A site"]
+[Date "2024.06.15"]
+[Round "3"]
+[White "Foo, Bar"]
+[Black "Buzz, Quux"]
+[Result "*"]
+[WhiteElo "1832"]
+[BlackElo "1887"]
+[ECO "A13k"]
+[EventDate "2024.06.15"]
+[FlipB "1"]
+
+; A comment at the very beginning.
+	   1.	e4      e5
+	   2.	Nf3     Nc6
+	   3.	Bb5    	d6
+	   4.	O-O
+           {Quite a tame move.}
+           (4. d4 Bb7 5. Nc3)
+           (4. Nc3 Bd7 5. --
+              (5. d4 { Busted! } 5... exd4!?)
+              ({ This is that } 5. a3? Be7 { Well played }))
+           4...         Nf6
+           { This is a strong move}
+           5. c3 { Not so strong a move }
+           5...         Bg4!
+*
