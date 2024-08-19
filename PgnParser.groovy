@@ -1,5 +1,3 @@
-#!/usr/bin/env groovy
-
 import groovy.transform.*
 
 /***************************************************************************/
@@ -148,7 +146,7 @@ class DB {
 
 
 
-class Parser {
+class PgnImporter {
 
   class ParseStatus {
     Game currentGame = null
@@ -173,7 +171,7 @@ class Parser {
     }
   }
 
-  void parse(String gameText) {
+  void apply(String gameText) {
     def status =  new ParseStatus(currentGame: Game.make())
     def text = getFirstGame(gameText)
 
@@ -361,7 +359,7 @@ class Parser {
 /***************************************************************************/
 def test() {
   DB.clear()
-  new Parser().parse(new File('PgnParser.sample-00.pgn').text)
+  new PgnImporter().apply(new File('PgnParser.sample-00.pgn').text)
   assert DB.VARIATIONS.size() == 5
   assert DB.MOVES.size() == 20
   assert DB.TAGS.size() == 12
